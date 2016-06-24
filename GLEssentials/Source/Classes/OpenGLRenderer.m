@@ -732,6 +732,8 @@ static GLsizei GetGLTypeSize(GLenum type)
 		//   user to see this, we're only drawing as a pre-warm stage
 		[self render];
 		
+        initCPP();
+        
 		// Reset the _characterAngle which is incremented in render
 		_characterAngle = 0;
 		
