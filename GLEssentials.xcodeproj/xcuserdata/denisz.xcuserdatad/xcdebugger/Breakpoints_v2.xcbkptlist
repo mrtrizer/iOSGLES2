@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GLEssentials/Source/Classes/OpenGLRenderer.m"
-            timestampString = "488471439.163375"
+            timestampString = "488478634.372916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "627"
-            endingLineNumber = "627"
+            startingLineNumber = "631"
+            endingLineNumber = "631"
             landmarkName = "-initWithDefaultFBO:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GLEssentials/Source/Classes/OpenGLRenderer.m"
-            timestampString = "488471439.163375"
+            timestampString = "488478634.372916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "652"
-            endingLineNumber = "652"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
             landmarkName = "-initWithDefaultFBO:"
             landmarkType = "5">
          </BreakpointContent>
@@ -105,13 +105,93 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GLEssentials/Source/Classes/OpenGLRenderer.m"
-            timestampString = "488471493.29659"
+            filePath = "GLEssentials/Source/Classes/glviewshape.cpp"
+            timestampString = "488478754.691834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "GLViewShape::draw(const glm::mat4 &amp;pMartrix, const glm::mat4 &amp;mvMatrix)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GLViewShape::draw(glm::tmat4x4&lt;float, (glm::precision)0&gt; const&amp;, glm::tmat4x4&lt;float, (glm::precision)0&gt; const&amp;)"
+                  moduleName = "GLEssentials"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisz/Downloads/GLEssentials/GLEssentials/Source/Classes/glviewshape.cpp"
+                  timestampString = "488478754.695249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GLViewShape::draw(glm::tmat4x4&lt;float, (glm::precision)0&gt; const&amp;, glm::tmat4x4&lt;float, (glm::precision)0&gt; const&amp;)::$_0::operator()() const"
+                  moduleName = "GLEssentials"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denisz/Downloads/GLEssentials/GLEssentials/Source/Classes/glviewshape.cpp"
+                  timestampString = "488478754.695399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GLEssentials/Source/Classes/OpenGLRenderer.m"
+            timestampString = "488479048.059782"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-render"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GLEssentials/Source/Classes/glshaderprogram.cpp"
+            timestampString = "488479631.197412"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "GLShaderProgram::render(const GLAttribArray &amp; attribArray, UniformFunc uniformFunc = [](){})"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GLEssentials/Source/Classes/glattribarray.h"
+            timestampString = "488479723.414307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "addVBO(const ItemType * buf, int bufSize, int itemType, GLint attr)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

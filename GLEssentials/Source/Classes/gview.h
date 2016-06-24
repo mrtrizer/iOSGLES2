@@ -2,7 +2,7 @@
 #define GVIEW_H
 
 #include <memory>
-#include <glm/mat4x4.hpp>
+#include "glm/mat4x4.hpp"
 
 #include "gtools.h"
 

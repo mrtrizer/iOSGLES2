@@ -12,6 +12,7 @@
 #import "imageUtil.h"
 #import "modelUtil.h"
 #import "sourceUtil.h"
+#include "GLWrapper.hpp"
 
 
 // Indicies to which we will set vertex array attibutes
@@ -60,45 +61,46 @@ enum {
 
 - (void) render
 {
+    renderCPP();
 	// Set up the modelview and projection matricies
-	GLfloat modelView[16];
-	GLfloat projection[16];
-	GLfloat mvp[16];
-	
-	
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
-	// Use the program for rendering our character
-	glUseProgram(_characterPrgName);
-	
-	// Calculate the projection matrix
-	mtxLoadPerspective(projection, 90, (float)_viewWidth / (float)_viewHeight,5.0,10000);
-	
-	// Calculate the modelview matrix to render our character 
-	//  at the proper position and rotation
-	mtxLoadTranslate(modelView, 0, 150, -450);
-	mtxRotateXApply(modelView, -90.0f);	
-	mtxRotateApply(modelView, _characterAngle, 0.7, 0.3, 1);
-	
-	// Multiply the modelview and projection matrix and set it in the shader
-	mtxMultiply(mvp, projection, modelView);
-	
-	// Have our shader use the modelview projection matrix 
-	// that we calculated above
-	glUniformMatrix4fv(_characterMvpUniformIdx, 1, GL_FALSE, mvp);
-	
-//	// Bind the texture to be used
-//	glBindTexture(GL_TEXTURE_2D, _characterTexName);
-	
-	// Bind our vertex array object
-	glBindVertexArray(_characterVAOName);
-	
-	// Cull back faces now that we no longer render 
-	// with an inverted matrix
-	glCullFace(GL_BACK);
-	
-
-    glDrawElements(GL_TRIANGLES, _characterNumElements, _characterElementType, 0);
+//	GLfloat modelView[16];
+//	GLfloat projection[16];
+//	GLfloat mvp[16];
+//	
+//	
+//	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//	
+//	// Use the program for rendering our character
+//	glUseProgram(_characterPrgName);
+//	
+//	// Calculate the projection matrix
+//	mtxLoadPerspective(projection, 90, (float)_viewWidth / (float)_viewHeight,5.0,10000);
+//	
+//	// Calculate the modelview matrix to render our character 
+//	//  at the proper position and rotation
+//	mtxLoadTranslate(modelView, 0, 150, -450);
+//	mtxRotateXApply(modelView, -90.0f);	
+//	mtxRotateApply(modelView, _characterAngle, 0.7, 0.3, 1);
+//	
+//	// Multiply the modelview and projection matrix and set it in the shader
+//	mtxMultiply(mvp, projection, modelView);
+//	
+//	// Have our shader use the modelview projection matrix 
+//	// that we calculated above
+//	glUniformMatrix4fv(_characterMvpUniformIdx, 1, GL_FALSE, mvp);
+//	
+////	// Bind the texture to be used
+////	glBindTexture(GL_TEXTURE_2D, _characterTexName);
+//	
+//	// Bind our vertex array object
+//	glBindVertexArray(_characterVAOName);
+//	
+//	// Cull back faces now that we no longer render 
+//	// with an inverted matrix
+//	glCullFace(GL_BACK);
+//	
+//
+//    glDrawElements(GL_TRIANGLES, _characterNumElements, _characterElementType, 0);
 
 
 	
@@ -420,6 +422,8 @@ static GLsizei GetGLTypeSize(GLenum type)
 		return 0;
 	}
 	
+    initCPP();
+    
 	GetGLError();
 	
 	return fboName;
@@ -709,13 +713,18 @@ static GLsizei GetGLTypeSize(GLenum type)
 		////////////////////////////////////////////////
 		
 		// Depth test will always be enabled
-		glEnable(GL_DEPTH_TEST);
-	
+		//glEnable(GL_DEPTH_TEST);
+        glClearColor(0.0, 0.0, 0.0, 0.0);
+
+        glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        glEnable (GL_BLEND);
+        
 		// We will always cull back faces for better performance
-		glEnable(GL_CULL_FACE);
+		//glEnable(GL_CULL_FACE);
 		
 		// Always use this clear color
-		glClearColor(0.5f, 0.4f, 0.5f, 1.0f);
+		//glClearColor(0.5f, 0.4f, 0.5f, 1.0f);
 		
 		// Draw our scene once without presenting the rendered image.
 		//   This is done in order to pre-warm OpenGL

@@ -11,6 +11,15 @@
 
 #include <stdio.h>
 
-void render();
+#ifdef __cplusplus
+extern "C" {
+#endif
 
+void renderCPP();
+void initCPP();
+
+#ifdef __cplusplus
+}
+#endif
+    
 #endif /* GLWrapper_hpp */
