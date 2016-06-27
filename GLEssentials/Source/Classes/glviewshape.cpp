@@ -21,7 +21,7 @@ static const char shapeFShader[] =
 
 GLViewShape::GLViewShape() :
     GLView(shapeVShader, shapeFShader),
-    colorRGBA({1.0f, 1.0f, 1.0f, 1.0f}){
+    colorRGBA({1.0f, 0.0f, 0.0f, 1.0f}){
 
 }
 

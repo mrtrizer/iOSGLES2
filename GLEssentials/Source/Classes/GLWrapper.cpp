@@ -21,7 +21,7 @@ std::shared_ptr<GViewRect> myRect;
 void renderCPP() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    glm::mat4 pMatrix = glm::ortho(-100, 100, -100, 100, -100, 100);
+    glm::mat4 pMatrix = glm::ortho( -100.f, 100.f, -100.f, 100.f, -1.f, 1.f );
     glm::mat4 mvMatrix = glm::mat4(1);
     
     if (myRect != nullptr)
@@ -32,10 +32,10 @@ void renderCPP() {
 void initCPP() {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     CHECK_GL_ERROR;
-    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    CHECK_GL_ERROR;
     glEnable (GL_BLEND);
     CHECK_GL_ERROR;
-    myRect = std::make_shared<GViewRect>(1000,1000);
+    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    CHECK_GL_ERROR;
+    myRect = std::make_shared<GViewRect>(10,10);
 }
 }
